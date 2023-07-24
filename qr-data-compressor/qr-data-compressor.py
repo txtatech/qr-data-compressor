@@ -14,6 +14,9 @@ class MainFrame(wx.Frame):
         self.sizer = wx.BoxSizer(wx.VERTICAL)
 
         # Buttons
+        self.button_select_file = wx.Button(self.panel, label="Select File")
+        self.button_select_file.Bind(wx.EVT_BUTTON, self.select_file)
+
         self.button_generate_qr = wx.Button(self.panel, label="Generate QR Code")
         self.button_generate_qr.Bind(wx.EVT_BUTTON, self.generate_qr)
 
@@ -41,13 +44,11 @@ class MainFrame(wx.Frame):
         # Base64 image button
         self.create_base64_image_button()
 
-        self.button_select_file = wx.Button(self.panel, label="Select File")
-        self.button_select_file.Bind(wx.EVT_BUTTON, self.select_file)
-
         self.text_input = wx.TextCtrl(self.panel, style=wx.TE_MULTILINE)
         self.output_text = wx.TextCtrl(self.panel, style=wx.TE_MULTILINE | wx.TE_READONLY)
 
         # Adding buttons to sizer
+        self.sizer.Add(self.button_select_file, 0, wx.ALL | wx.EXPAND, 5)
         self.sizer.Add(self.button_generate_qr, 0, wx.ALL | wx.EXPAND, 5)
         self.sizer.Add(self.button_compress_base64, 0, wx.ALL | wx.EXPAND, 5)
         self.sizer.Add(self.button_compress_hex, 0, wx.ALL | wx.EXPAND, 5)
@@ -60,8 +61,6 @@ class MainFrame(wx.Frame):
 
         self.sizer.Add(self.text_input, 1, wx.ALL | wx.EXPAND, 5)
         self.sizer.Add(self.output_text, 1, wx.ALL | wx.EXPAND, 5)
-
-        self.sizer.Add(self.button_select_file, 0, wx.ALL | wx.EXPAND, 5)
 
         self.base64_image_bitmap = wx.StaticBitmap(self.panel)
         self.sizer.Add(self.base64_image_bitmap, 0, wx.ALL | wx.EXPAND, 5)
