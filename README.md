@@ -41,7 +41,7 @@ Visit the GitHub page for the script at https://github.com/txtatech/qr-data-comp
 - gzip, base64, and binascii from Python's standard library.
 - pyzbar and PIL for handling QR code and image operations.
 
-![Example Image](https://github.com/txtatech/qr-data-compressor/qr-data-compressor-example-1.png)
+![Example Image](https://github.com/txtatech/qr-data-compressor/blob/main/qr-data-compressor/qr-data-compressor-example-1.png)
 
 # MIT License
 
