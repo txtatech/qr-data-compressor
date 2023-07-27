@@ -41,6 +41,10 @@ Visit the GitHub page for the script at https://github.com/txtatech/qr-data-comp
 - gzip, base64, and binascii from Python's standard library.
 - pyzbar and PIL for handling QR code and image operations.
 
+### NOTE:
+
+When encoding data as base64, it pads the data to a length that's a multiple of 4. If you are splitting base64 data into chunks, you need to make sure that each chunk (except possibly the last one) ends on a multiple of 4 characters. If you don't, the padding can be cut off, which can cause decoding to fail later on. So, whenever dealing with base64 data in chunks, it is important to keep this in mind.
+
 ![Example Image](https://github.com/txtatech/qr-data-compressor/blob/main/qr-data-compressor/qr-data-compressor-example-1.png)
 
 # MIT License
